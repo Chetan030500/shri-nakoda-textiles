@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+*.log
+# If you want to keep your local data private, uncomment these:
+# database.sqlite
+# uploads/

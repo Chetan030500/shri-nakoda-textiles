@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shri Nakoda Textiles | Premium Fabrics</title>
+    <meta name="description"
+        content="Discover the finest collection of premium textiles at Shri Nakoda Textiles. Weaving elegance into reality.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+    <header id="navbar">
+        <div class="container">
+            <div class="logo">Shri Nakoda <span class="accent">Textiles</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <button id="themeToggle" class="theme-toggle" title="Toggle Night Mode">
+                            <span class="light-mode-icon">🌙</span>
+                            <span class="dark-mode-icon">☀️</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-bg"></div>
+            <div class="overlay"></div>
+            <div class="hero-content">
+                <h1>Weaving Elegance <br>into <em>Reality</em></h1>
+                <p>Experience the finest collection of premium silks, cottons, and synthetic blends designed for the
+                    modern connoisseur.</p>
+                <a href="#collections" class="btn btn-primary">Explore Collections</a>
+            </div>
+        </section>
+
+        <section id="collections">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Curated Collections</h2>
+                    <p>Handpicked fabrics for every occasion.</p>
+                </div>
+                <div class="collection-grid">
+                    <!-- Products will be loaded dynamically via JS -->
+                    <div style="text-align:center; width:100%; padding: 40px;">Loading products...</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container about-wrapper">
+                <div class="about-text">
+                    <h2>A Legacy of Quality</h2>
+                    <p>At <strong>Shri Nakoda Textiles</strong>, we believe that fabric is more than just material—it's
+                        the canvas of your personal expression. Established with a vision to bring the world's finest
+                        textures to your doorstep, we source and curate textiles that stand the test of time.</p>
+                    <p>From the looms of Varanasi to the mills of Manchester, our range reflects a global standard of
+                        excellence, tailored for the Indian soul.</p>
+                </div>
+                <div class="about-image">
+                    <!-- Using the gold pattern as a texture element here -->
+                    <img src="assets/gold-pattern.png" alt="Gold thread pattern details">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="contact-box">
+                    <h2>Get in Touch</h2>
+                    <p>Visit our showroom or send us a query.</p>
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <strong>Shop</strong>
+                            <p><a href="https://www.google.com/maps/search/?api=1&query=Shri+Nakoda+Textiles+Lal+bazar+Nathdwara+Rajasthan+313301"
+                                    target="_blank">Lal bazar, Nathdwara, Rajasthan, India - 313301</a></p>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Phone</strong>
+                            <p><a href="tel:+918079031143">+91 80790 31143</a></p>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Email</strong>
+                            <p><a href="mailto:jrishu073@gmail.com">jrishu073@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modalImage" src="" alt="Product Image">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <p class="category-tag" id="modalCategory"></p>
+                    <p id="modalDescription"></p>
+                    <div class="modal-actions">
+                        <a href="" id="modalWhatsapp" target="_blank" class="btn-whatsapp">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"
+                                style="width:16px; margin-right:5px; vertical-align:middle;">
+                            Query on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Shri Nakoda Textiles. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
