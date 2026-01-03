@@ -110,6 +110,12 @@ header .container {
     color: var(--color-accent);
 }
 
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -129,6 +135,32 @@ nav a:hover {
 
 .mobile-menu-toggle {
     display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 10px;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: all 0.3s ease;
+}
+
+/* Active State for Toggle */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Hero Section */
@@ -140,7 +172,6 @@ nav a:hover {
     justify-content: center;
     text-align: center;
     color: var(--color-text);
-    /* Use text variable */
 }
 
 .hero-bg {
@@ -168,7 +199,6 @@ nav a:hover {
 
 body.dark-mode .overlay {
     background: rgba(0, 0, 0, 0.85);
-    /* Darker overlay in night mode */
 }
 
 .hero-content h1 {
@@ -176,13 +206,11 @@ body.dark-mode .overlay {
     line-height: 1.1;
     margin-bottom: 20px;
     color: #ffffff;
-    /* Default bright for visibility on dark overlay */
     transition: color 0.5s;
 }
 
 body.dark-mode .hero-content h1 {
     color: var(--color-accent);
-    /* Golden heading in night mode */
 }
 
 .hero-content h1 em {
@@ -198,13 +226,11 @@ body.dark-mode .hero-content h1 {
     margin-right: auto;
     opacity: 0.9;
     color: #f0f0f0;
-    /* Default light */
     transition: color 0.5s;
 }
 
 body.dark-mode .hero-content p {
     color: var(--color-text);
-    /* Theme text in night mode */
 }
 
 /* Collections */
@@ -275,49 +301,6 @@ body.dark-mode .hero-content p {
     letter-spacing: 1px;
 }
 
-.card-actions {
-    margin-top: 15px;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-.btn-detail {
-    background: transparent;
-    border: 1px solid var(--color-primary);
-    color: var(--color-primary);
-    padding: 8px 12px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s;
-    border-radius: 4px;
-}
-
-.btn-detail:hover {
-    background: var(--color-primary);
-    color: #fff;
-}
-
-.btn-whatsapp {
-    display: inline-flex;
-    align-items: center;
-    background-color: #25D366;
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.btn-whatsapp:hover {
-    background-color: #128C7E;
-    color: #fff;
-}
-
 /* Modal Styles */
 .modal {
     display: none;
@@ -341,18 +324,6 @@ body.dark-mode .hero-content p {
     position: relative;
     overflow: hidden;
     animation: modalScale 0.3s ease-out;
-}
-
-@keyframes modalScale {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
 }
 
 .close-modal {
@@ -413,31 +384,22 @@ body.dark-mode .hero-content p {
     font-size: 1.1rem;
 }
 
-.modal-actions .btn-whatsapp {
-    padding: 12px 25px;
-    font-size: 1rem;
-}
-
-.modal-thumbnails {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 25px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-}
-
-.modal-thumbnails img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    background-color: #25D366;
+    color: #fff;
+    padding: 8px 15px;
     border-radius: 4px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: border-color 0.3s;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
 
-.modal-thumbnails img:hover {
-    border-color: var(--color-accent);
+.btn-whatsapp:hover {
+    background-color: #128C7E;
+    color: #fff;
 }
 
 /* About Section */
@@ -530,13 +492,11 @@ footer {
     height: 24px;
     transition: transform 0.3s ease;
     filter: grayscale(1) invert(0.5);
-    /* Muted by default */
 }
 
 .social-icon:hover img {
     transform: scale(1.1);
     filter: grayscale(0) invert(0);
-    /* Full color on hover */
 }
 
 body.dark-mode footer {
@@ -559,41 +519,33 @@ body.dark-mode footer {
 
 .collection-grid {
     margin-bottom: 60px;
-    /* Add space between grids */
 }
 
 /* Responsive */
-/* Theme Toggle */
 .theme-toggle {
     background: none;
     border: none;
     color: var(--color-primary);
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
-    transition: color 0.3s;
+    padding: 8px;
+    transition: all 0.3s;
+    border-radius: 50%;
 }
 
 .theme-toggle:hover {
+    background-color: rgba(212, 175, 55, 0.1);
     color: var(--color-accent);
 }
 
-.dark-mode-icon {
-    display: none;
-}
-
-body.dark-mode .light-mode-icon {
-    display: none;
-}
-
-body.dark-mode .dark-mode-icon {
-    display: block;
-}
-
 @media (max-width: 768px) {
+    .header-right {
+        gap: 5px;
+    }
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
@@ -602,13 +554,34 @@ body.dark-mode .dark-mode-icon {
         flex-direction: column;
     }
 
-    nav {
-        display: none;
-        /* Todo: Implement mobile menu toggle */
+    .mobile-menu-toggle {
+        display: flex;
     }
 
-    .mobile-menu-toggle {
-        display: block;
-        /* Add hamburger icon styles */
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: var(--color-white);
+        z-index: 1000;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        padding: 100px 40px;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-start;
+    }
+
+    nav a {
+        font-size: 1.2rem;
     }
 }
