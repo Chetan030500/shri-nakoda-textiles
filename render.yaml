@@ -2,12 +2,9 @@ services:
   - type: web
     name: shri-nakoda-textiles
     env: node
+    plan: free
     buildCommand: npm install
     startCommand: npm start
-    disk:
-      name: product-data
-      mountPath: /uploads
-      sizeGB: 1
     envVars:
       - key: NODE_VERSION
         value: 18.0.0
