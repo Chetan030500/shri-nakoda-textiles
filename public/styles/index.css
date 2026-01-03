@@ -513,9 +513,34 @@ body.dark-mode .hero-content p {
 footer {
     background-color: #050d18;
     color: #777;
-    padding: 20px 0;
+    padding: 40px 0 20px;
     text-align: center;
     font-size: 0.9rem;
+}
+
+.footer-social {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+    filter: grayscale(1) invert(0.5);
+    /* Muted by default */
+}
+
+.social-icon:hover img {
+    transform: scale(1.1);
+    filter: grayscale(0) invert(0);
+    /* Full color on hover */
+}
+
+body.dark-mode footer {
+    background-color: #020810;
 }
 
 .category-header {
