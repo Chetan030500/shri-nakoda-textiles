@@ -12,26 +12,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Mobile Menu Toggle (To be fully implemented)
-    const mobileToggle = document.querySelector('.mobile-menu-toggle');
-    const nav = document.querySelector('nav');
+    // Mobile Menu Toggle
+    const mobileToggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('#nav-menu a');
 
     if (mobileToggle) {
         mobileToggle.addEventListener('click', () => {
-            if (nav.style.display === 'block') {
-                nav.style.display = 'none';
-            } else {
-                nav.style.display = 'block';
-                nav.style.position = 'absolute';
-                nav.style.top = '100%';
-                nav.style.left = '0';
-                nav.style.width = '100%';
-                nav.style.backgroundColor = '#fff';
-                nav.style.padding = '20px';
-                nav.style.textAlign = 'center';
-            }
+            mobileToggle.classList.toggle('active');
+            nav.classList.toggle('active');
         });
     }
+
+    // Close menu when clicking links
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileToggle.classList.remove('active');
+            nav.classList.remove('active');
+        });
+    });
 
     // Dynamic Product Fetching with Grouping
     const collectionGrid = document.querySelector('.collection-grid');
@@ -72,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 allowedCategories.forEach(category => {
                     const catProducts = groups[category] || [];
 
-                    // Only show category if it has products (or remove this check if you want empty sections)
                     if (catProducts.length > 0) {
                         const catHeader = document.createElement('div');
                         catHeader.className = 'category-header';
@@ -141,14 +139,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const infoSection = document.querySelector('.modal-info');
-        // Remove existing thumbnails if any
         const oldThumbs = document.querySelector('.modal-thumbnails');
         if (oldThumbs) oldThumbs.remove();
 
         if (imagePaths.length > 1) {
             const thumbContainer = document.createElement('div');
             thumbContainer.className = 'modal-thumbnails';
-            imagePaths.forEach((path, index) => {
+            imagePaths.forEach((path) => {
                 const img = document.createElement('img');
                 img.src = path.startsWith('http') ? path : '/' + path;
                 img.onclick = () => {
@@ -169,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('modalWhatsapp').href = `https://wa.me/918079031143?text=${whatsappMsg}`;
 
         modal.style.display = 'block';
-        document.body.style.overflow = 'hidden'; // Prevent scroll
+        document.body.style.overflow = 'hidden';
     };
 
     if (closeBtn) {
@@ -190,7 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('themeToggle');
     const body = document.body;
 
-    // Check for saved theme
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         body.classList.add('dark-mode');
